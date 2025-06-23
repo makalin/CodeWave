@@ -1,0 +1,63 @@
+{
+  "name": "codewave",
+  "version": "1.0.0",
+  "description": "AI-assisted low-level coding tool for assembly and machine code",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && npm run build:wasm",
+    "build:wasm": "cd wasm && wasm-pack build --target web",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:e2e": "playwright test",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint src/**/*.js --fix",
+    "format": "prettier --write src/**/*.{js,css,html}",
+    "docs": "jsdoc -c jsdoc.json",
+    "serve": "vite preview",
+    "clean": "rm -rf dist node_modules/.cache"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "monaco-editor": "^0.45.0",
+    "socket.io-client": "^4.7.4",
+    "webrtc-adapter": "^8.2.3",
+    "dexie": "^3.2.4",
+    "marked": "^9.1.6",
+    "highlight.js": "^11.9.0",
+    "chart.js": "^4.4.0",
+    "three": "^0.158.0",
+    "zod": "^3.22.4",
+    "nanoid": "^5.0.4"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "jest": "^29.7.0",
+    "@playwright/test": "^1.40.0",
+    "eslint": "^8.55.0",
+    "prettier": "^3.1.0",
+    "jsdoc": "^4.0.2",
+    "sass": "^1.69.5",
+    "@types/node": "^20.10.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/makalin/CodeWave.git"
+  },
+  "keywords": [
+    "assembly",
+    "x86",
+    "arm",
+    "risc-v",
+    "emulator",
+    "ai",
+    "low-level",
+    "machine-code"
+  ],
+  "author": "makalin",
+  "license": "MIT"
+} 
